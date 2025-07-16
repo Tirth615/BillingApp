@@ -6,36 +6,64 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		1BE254650AE5D539026E89F3 /* Pods_BillingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */; };
+		4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D506A2E2778D500A99F88 /* AppDelegate.swift */; };
+		4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50722E2778D500A99F88 /* SceneDelegate.swift */; };
+		4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50732E2778D500A99F88 /* ViewController.swift */; };
+		4D6D50782E2778D500A99F88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D506B2E2778D500A99F88 /* Assets.xcassets */; };
+		4D6D50792E2778D500A99F88 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D506C2E2778D500A99F88 /* GoogleService-Info.plist */; };
+		4D6D507B2E2778D500A99F88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D506F2E2778D500A99F88 /* LaunchScreen.storyboard */; };
+		4D6D507C2E2778D500A99F88 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D50712E2778D500A99F88 /* Main.storyboard */; };
+		4D6D508A2E27799F00A99F88 /* RegistrationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50862E27799F00A99F88 /* RegistrationVC.swift */; };
+		4D6D508B2E27799F00A99F88 /* ForgotPasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50872E27799F00A99F88 /* ForgotPasswordVC.swift */; };
+		4D6D508C2E27799F00A99F88 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50852E27799F00A99F88 /* LoginVC.swift */; };
+		4D6D508F2E2779BD00A99F88 /* GeneralUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D508E2E2779BD00A99F88 /* GeneralUtility.swift */; };
+		4D6D50902E2779BD00A99F88 /* KeyboardHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D508D2E2779BD00A99F88 /* KeyboardHandler.swift */; };
+		4D6D509A2E27822D00A99F88 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50942E27822D00A99F88 /* ProfileVC.swift */; };
+		4D6D509B2E27822D00A99F88 /* ChangePasswordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50952E27822D00A99F88 /* ChangePasswordVC.swift */; };
+		4D6D509C2E27822D00A99F88 /* AccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50972E27822D00A99F88 /* AccountVC.swift */; };
+		4D6D509D2E27822D00A99F88 /* ProfileTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50912E27822D00A99F88 /* ProfileTVC.swift */; };
+		4D6D509E2E27822D00A99F88 /* ContactUsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50962E27822D00A99F88 /* ContactUsVC.swift */; };
+		4D6D509F2E27822D00A99F88 /* ProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D50922E27822D00A99F88 /* ProfileTVC.xib */; };
+		4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A22E2783E100A99F88 /* AddProductVC.swift */; };
+		4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		4D6D503E2E27776500A99F88 /* BillingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D6D506A2E2778D500A99F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4D6D506B2E2778D500A99F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4D6D506C2E2778D500A99F88 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4D6D506D2E2778D500A99F88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D6D506E2E2778D500A99F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4D6D50702E2778D500A99F88 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4D6D50722E2778D500A99F88 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		4D6D50732E2778D500A99F88 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4D6D50852E27799F00A99F88 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		4D6D50862E27799F00A99F88 /* RegistrationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationVC.swift; sourceTree = "<group>"; };
+		4D6D50872E27799F00A99F88 /* ForgotPasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordVC.swift; sourceTree = "<group>"; };
+		4D6D508D2E2779BD00A99F88 /* KeyboardHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHandler.swift; sourceTree = "<group>"; };
+		4D6D508E2E2779BD00A99F88 /* GeneralUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralUtility.swift; sourceTree = "<group>"; };
+		4D6D50912E27822D00A99F88 /* ProfileTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTVC.swift; sourceTree = "<group>"; };
+		4D6D50922E27822D00A99F88 /* ProfileTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileTVC.xib; sourceTree = "<group>"; };
+		4D6D50942E27822D00A99F88 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		4D6D50952E27822D00A99F88 /* ChangePasswordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordVC.swift; sourceTree = "<group>"; };
+		4D6D50962E27822D00A99F88 /* ContactUsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsVC.swift; sourceTree = "<group>"; };
+		4D6D50972E27822D00A99F88 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
+		4D6D50A22E2783E100A99F88 /* AddProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductVC.swift; sourceTree = "<group>"; };
+		4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGenerateVC.swift; sourceTree = "<group>"; };
+		65D6D732FA379364E1D30DB7 /* Pods-BillingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillingApp.release.xcconfig"; path = "Target Support Files/Pods-BillingApp/Pods-BillingApp.release.xcconfig"; sourceTree = "<group>"; };
+		75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2BD77D9EB69707E4E1955E4 /* Pods-BillingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillingApp.debug.xcconfig"; path = "Target Support Files/Pods-BillingApp/Pods-BillingApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4D6D50502E27776800A99F88 /* Exceptions for "BillingApp" folder in "BillingApp" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 4D6D503D2E27776500A99F88 /* BillingApp */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		4D6D50402E27776500A99F88 /* BillingApp */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				4D6D50502E27776800A99F88 /* Exceptions for "BillingApp" folder in "BillingApp" target */,
-			);
-			path = BillingApp;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		4D6D503B2E27776500A99F88 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BE254650AE5D539026E89F3 /* Pods_BillingApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -45,8 +73,10 @@
 		4D6D50352E27776500A99F88 = {
 			isa = PBXGroup;
 			children = (
-				4D6D50402E27776500A99F88 /* BillingApp */,
+				4D6D50742E2778D500A99F88 /* BillingApp */,
 				4D6D503F2E27776500A99F88 /* Products */,
+				77B569B894A3E57BF2AB22EE /* Pods */,
+				AA2DD45BCF02B28D9C92602D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +88,139 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		4D6D50742E2778D500A99F88 /* BillingApp */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50802E27793100A99F88 /* Delegate */,
+				4D6D507F2E27791D00A99F88 /* Helper */,
+				4D6D507E2E27791600A99F88 /* Module */,
+				4D6D507D2E27790E00A99F88 /* StoryBoard */,
+				4D6D506B2E2778D500A99F88 /* Assets.xcassets */,
+				4D6D506C2E2778D500A99F88 /* GoogleService-Info.plist */,
+				4D6D506D2E2778D500A99F88 /* Info.plist */,
+				4D6D50732E2778D500A99F88 /* ViewController.swift */,
+			);
+			path = BillingApp;
+			sourceTree = "<group>";
+		};
+		4D6D507D2E27790E00A99F88 /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D506F2E2778D500A99F88 /* LaunchScreen.storyboard */,
+				4D6D50712E2778D500A99F88 /* Main.storyboard */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		4D6D507E2E27791600A99F88 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50A12E2783C300A99F88 /* BillGenerate */,
+				4D6D50A02E2783BB00A99F88 /* Product */,
+				4D6D50992E27822D00A99F88 /* Profile */,
+				4D6D50892E27799F00A99F88 /* Authentication */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		4D6D507F2E27791D00A99F88 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D508D2E2779BD00A99F88 /* KeyboardHandler.swift */,
+				4D6D508E2E2779BD00A99F88 /* GeneralUtility.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		4D6D50802E27793100A99F88 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D506A2E2778D500A99F88 /* AppDelegate.swift */,
+				4D6D50722E2778D500A99F88 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		4D6D50882E27799F00A99F88 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50852E27799F00A99F88 /* LoginVC.swift */,
+				4D6D50862E27799F00A99F88 /* RegistrationVC.swift */,
+				4D6D50872E27799F00A99F88 /* ForgotPasswordVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4D6D50892E27799F00A99F88 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50882E27799F00A99F88 /* ViewController */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		4D6D50932E27822D00A99F88 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50912E27822D00A99F88 /* ProfileTVC.swift */,
+				4D6D50922E27822D00A99F88 /* ProfileTVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D6D50982E27822D00A99F88 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50942E27822D00A99F88 /* ProfileVC.swift */,
+				4D6D50952E27822D00A99F88 /* ChangePasswordVC.swift */,
+				4D6D50962E27822D00A99F88 /* ContactUsVC.swift */,
+				4D6D50972E27822D00A99F88 /* AccountVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D6D50992E27822D00A99F88 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50932E27822D00A99F88 /* View */,
+				4D6D50982E27822D00A99F88 /* Controller */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		4D6D50A02E2783BB00A99F88 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50A22E2783E100A99F88 /* AddProductVC.swift */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		4D6D50A12E2783C300A99F88 /* BillGenerate */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */,
+			);
+			path = BillGenerate;
+			sourceTree = "<group>";
+		};
+		77B569B894A3E57BF2AB22EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E2BD77D9EB69707E4E1955E4 /* Pods-BillingApp.debug.xcconfig */,
+				65D6D732FA379364E1D30DB7 /* Pods-BillingApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AA2DD45BCF02B28D9C92602D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -65,20 +228,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4D6D50512E27776800A99F88 /* Build configuration list for PBXNativeTarget "BillingApp" */;
 			buildPhases = (
+				FF58B4389DCE9CABB7CD84E1 /* [CP] Check Pods Manifest.lock */,
 				4D6D503A2E27776500A99F88 /* Sources */,
 				4D6D503B2E27776500A99F88 /* Frameworks */,
 				4D6D503C2E27776500A99F88 /* Resources */,
+				A59B929076EF8DE5162C1432 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				4D6D50402E27776500A99F88 /* BillingApp */,
-			);
 			name = BillingApp;
-			packageProductDependencies = (
-			);
 			productName = BillingApp;
 			productReference = 4D6D503E2E27776500A99F88 /* BillingApp.app */;
 			productType = "com.apple.product-type.application";
@@ -122,30 +282,117 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6D50782E2778D500A99F88 /* Assets.xcassets in Resources */,
+				4D6D50792E2778D500A99F88 /* GoogleService-Info.plist in Resources */,
+				4D6D507B2E2778D500A99F88 /* LaunchScreen.storyboard in Resources */,
+				4D6D507C2E2778D500A99F88 /* Main.storyboard in Resources */,
+				4D6D509F2E27822D00A99F88 /* ProfileTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A59B929076EF8DE5162C1432 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BillingApp/Pods-BillingApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BillingApp/Pods-BillingApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BillingApp/Pods-BillingApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF58B4389DCE9CABB7CD84E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BillingApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4D6D503A2E27776500A99F88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D6D509A2E27822D00A99F88 /* ProfileVC.swift in Sources */,
+				4D6D509B2E27822D00A99F88 /* ChangePasswordVC.swift in Sources */,
+				4D6D509C2E27822D00A99F88 /* AccountVC.swift in Sources */,
+				4D6D509D2E27822D00A99F88 /* ProfileTVC.swift in Sources */,
+				4D6D509E2E27822D00A99F88 /* ContactUsVC.swift in Sources */,
+				4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */,
+				4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */,
+				4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */,
+				4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */,
+				4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */,
+				4D6D508F2E2779BD00A99F88 /* GeneralUtility.swift in Sources */,
+				4D6D50902E2779BD00A99F88 /* KeyboardHandler.swift in Sources */,
+				4D6D508A2E27799F00A99F88 /* RegistrationVC.swift in Sources */,
+				4D6D508B2E27799F00A99F88 /* ForgotPasswordVC.swift in Sources */,
+				4D6D508C2E27799F00A99F88 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		4D6D506F2E2778D500A99F88 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D6D506E2E2778D500A99F88 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		4D6D50712E2778D500A99F88 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4D6D50702E2778D500A99F88 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		4D6D50522E27776800A99F88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E2BD77D9EB69707E4E1955E4 /* Pods-BillingApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BHNZXW67R6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BillingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -168,12 +415,14 @@
 		};
 		4D6D50532E27776800A99F88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65D6D732FA379364E1D30DB7 /* Pods-BillingApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = BHNZXW67R6;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BillingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
