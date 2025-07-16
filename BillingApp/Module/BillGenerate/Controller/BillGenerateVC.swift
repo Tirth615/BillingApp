@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseFirestore
 
+
 class BillGenerateVC: UIViewController {
     
     //MARK: - IBOutlet
@@ -25,6 +26,7 @@ class BillGenerateVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        txtBarcode.addDoneButtonOnKeyboard()
         tableProduct.register(UINib(nibName: "BillgenerateTVC", bundle: nil), forCellReuseIdentifier: "BillgenerateTVC")
         tableProduct.delegate = self
         tableProduct.dataSource = self

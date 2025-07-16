@@ -12,6 +12,7 @@
 		4D2F52C32E27A4DD005E79FE /* BillgenerateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C02E27A4DD005E79FE /* BillgenerateTVC.swift */; };
 		4D2F52C62E27A59B005E79FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C52E27A59B005E79FE /* Product.swift */; };
 		4D2F52C82E27B6E7005E79FE /* CustomerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */; };
+		4D3F20F82E27C0A100561D89 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F20F72E27C0A100561D89 /* PDFGenerator.swift */; };
 		4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D506A2E2778D500A99F88 /* AppDelegate.swift */; };
 		4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50722E2778D500A99F88 /* SceneDelegate.swift */; };
 		4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50732E2778D500A99F88 /* ViewController.swift */; };
@@ -39,6 +40,7 @@
 		4D2F52C12E27A4DD005E79FE /* BillgenerateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillgenerateTVC.xib; sourceTree = "<group>"; };
 		4D2F52C52E27A59B005E79FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfoVC.swift; sourceTree = "<group>"; };
+		4D3F20F72E27C0A100561D89 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		4D6D503E2E27776500A99F88 /* BillingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6D506A2E2778D500A99F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D6D506B2E2778D500A99F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 		4D6D507F2E27791D00A99F88 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				4D3F20F72E27C0A100561D89 /* PDFGenerator.swift */,
 				4D6D508D2E2779BD00A99F88 /* KeyboardHandler.swift */,
 				4D6D508E2E2779BD00A99F88 /* GeneralUtility.swift */,
 			);
@@ -404,6 +407,7 @@
 				4D2F52C62E27A59B005E79FE /* Product.swift in Sources */,
 				4D2F52C82E27B6E7005E79FE /* CustomerInfoVC.swift in Sources */,
 				4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */,
+				4D3F20F82E27C0A100561D89 /* PDFGenerator.swift in Sources */,
 				4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */,
 				4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */,
 				4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */,

@@ -7,6 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
+import PDFKit
 
 
 class CustomerInfoVC: UIViewController {
@@ -16,6 +17,10 @@ class CustomerInfoVC: UIViewController {
     @IBOutlet weak var txtCustomerName: UITextField!
     @IBOutlet weak var txtCustomermobile: UITextField!
     
+    @IBOutlet weak var btnSubmit: UIButton!
+    @IBOutlet weak var btnGoToHomePage: UIButton!
+    
+    
     // MARK: - Variables
     var billedProducts: [Product] = []
     var totalAmount: Double = 0.0
@@ -24,7 +29,9 @@ class CustomerInfoVC: UIViewController {
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        txtCustomerName.addDoneButtonOnKeyboard()
+        txtCustomermobile.addDoneButtonOnKeyboard()
+        btnGoToHomePage.isHidden = true
         // Do any additional setup after loading the view.
     }
     func generateInvoiceNumber(completion: @escaping (String?) -> Void) {
@@ -41,7 +48,7 @@ class CustomerInfoVC: UIViewController {
             var latestInvoice = snapshot.data()?["latestInvoice"] as? Int ?? 0
             latestInvoice += 1
             transaction.updateData(["latestInvoice": latestInvoice], forDocument: invoiceRef)
-            let formattedInvoice = String(format: "INV-%04d", latestInvoice)
+            let formattedInvoice = String(format: "BillNo: - %d", latestInvoice)
             return formattedInvoice
         }) { (object, error) in
             if let error = error {
@@ -55,12 +62,20 @@ class CustomerInfoVC: UIViewController {
         }
     }
     
-    @IBAction func btnSubmit(_ sender: Any) {
-        guard let name = txtCustomerName.text, !name.isEmpty,
-              let mobile = txtCustomermobile.text, !mobile.isEmpty else {
-            GeneralUtility.showAlert(on: self, title: "Error", message: "Enter customer name and mobile.")
+    @IBAction func btnGoToHomePage(_ sender: Any) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
             return
         }
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let delegate = windowScene.delegate as? SceneDelegate,
+           let window = delegate.window {
+            window.rootViewController = UINavigationController(rootViewController: vc)
+            window.makeKeyAndVisible()
+        }
+    }
+    @IBAction func btnSubmit(_ sender: Any) {
+        let name = txtCustomerName.text ?? "Guest"
+        let mobile = txtCustomermobile.text ?? "1234567890"
         generateInvoiceNumber { invoiceNumber in
             guard let invoiceNumber = invoiceNumber else {
                 GeneralUtility.showAlert(on: self, title: "Error", message: "Failed to generate invoice.")
@@ -87,15 +102,15 @@ class CustomerInfoVC: UIViewController {
                 if let error = error {
                     GeneralUtility.showAlert(on: self, title: "Error", message: error.localizedDescription)
                 } else {
-                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
-                    return
-                }
-                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-                   let delegate = windowScene.delegate as? SceneDelegate,
-                   let window = delegate.window {
-                    window.rootViewController = UINavigationController(rootViewController: vc)
-                    window.makeKeyAndVisible()
-                }
+                    if let pdfData = PDFGenerator.generateInvoicePDF(invoiceData: billData) {
+                        let activityVC = UIActivityViewController(activityItems: [pdfData], applicationActivities: nil)
+                        activityVC.excludedActivityTypes = [.addToReadingList, .assignToContact]
+                        self.present(activityVC, animated: true)
+                    } else {
+                        GeneralUtility.showAlert(on: self, title: "Error", message: "Failed to generate PDF.")
+                    }
+                    self.btnSubmit.isHidden = true
+                    self.btnGoToHomePage.isHidden = false
                     GeneralUtility.showAlert(on: self, title: "Success", message: "Bill saved with Invoice: \(invoiceNumber)")
                 }
             }
