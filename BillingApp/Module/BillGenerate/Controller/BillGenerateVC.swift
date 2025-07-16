@@ -7,7 +7,7 @@
 
 import UIKit
 import FirebaseFirestore
-
+import AVFoundation
 
 class BillGenerateVC: UIViewController {
     
@@ -22,6 +22,8 @@ class BillGenerateVC: UIViewController {
     //MARK: - Variable
     var billedProducts: [Product] = []
     var totalAmount: Double = 0.0
+    var captureSession: AVCaptureSession?
+    var previewLayer: AVCaptureVideoPreviewLayer?
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -40,6 +42,10 @@ class BillGenerateVC: UIViewController {
         self.txtBarcode.text = ""
         self.lblTotelAmount.text = "Your Total Is: ₹0.0"
         self.tableProduct.reloadData()
+    }
+    func failedScanner() {
+        GeneralUtility.showAlert(on: self, title: "Scanning not supported", message: "Your device does not support scanning a code from an item. Please use a device with a camera.")
+        captureSession = nil
     }
     
     //MARK: - Button Action
@@ -79,13 +85,19 @@ class BillGenerateVC: UIViewController {
     }
     
     @IBAction func btnScanner(_ sender: Any) {
+        if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BarcodeScannerVC") as? BarcodeScannerVC {
+            vc.onCodeScanned = { scannedCode in
+                self.txtBarcode.text = scannedCode
+                self.btnAdd(self.btnAdd!)
+            }
+            GeneralUtility.present(to: vc, from: self)
+        }
     }
-    
     
     @IBAction func btnConfirm(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomerInfoVC") as? CustomerInfoVC else { return }
         vc.billedProducts = self.billedProducts
-                vc.totalAmount = self.totalAmount
+        vc.totalAmount = self.totalAmount
         GeneralUtility.push(to: vc, from: self)
     }
 }
@@ -116,5 +128,25 @@ extension BillGenerateVC : UITableViewDelegate, UITableViewDataSource {
         }
         let config = UISwipeActionsConfiguration(actions: [deleteAction])
         return config
+    }
+}
+
+//MARK: - Extension Scanner
+extension BillGenerateVC : AVCaptureMetadataOutputObjectsDelegate {
+    func metadataOutput(_ output: AVCaptureMetadataOutput,
+                        didOutput metadataObjects: [AVMetadataObject],
+                        from connection: AVCaptureConnection) {
+        captureSession?.stopRunning()
+        if let metadataObject = metadataObjects.first,
+           let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
+           let scannedString = readableObject.stringValue {
+            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            barcodeScanned(code: scannedString)
+        }
+        previewLayer?.removeFromSuperlayer()
+    }
+    func barcodeScanned(code: String) {
+        txtBarcode.text = code
+        btnAdd(self)
     }
 }

@@ -21,5 +21,7 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>We Can Use For The Barcode Scanner</string>
 </dict>
 </plist>

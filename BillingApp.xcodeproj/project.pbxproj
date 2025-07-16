@@ -33,6 +33,7 @@
 		4D6D509F2E27822D00A99F88 /* ProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D50922E27822D00A99F88 /* ProfileTVC.xib */; };
 		4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A22E2783E100A99F88 /* AddProductVC.swift */; };
 		4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */; };
+		4D9C0E992E27D3680000A437 /* BarcodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C0E982E27D3680000A437 /* BarcodeScannerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +64,7 @@
 		4D6D50972E27822D00A99F88 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		4D6D50A22E2783E100A99F88 /* AddProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductVC.swift; sourceTree = "<group>"; };
 		4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGenerateVC.swift; sourceTree = "<group>"; };
+		4D9C0E982E27D3680000A437 /* BarcodeScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerVC.swift; sourceTree = "<group>"; };
 		65D6D732FA379364E1D30DB7 /* Pods-BillingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillingApp.release.xcconfig"; path = "Target Support Files/Pods-BillingApp/Pods-BillingApp.release.xcconfig"; sourceTree = "<group>"; };
 		75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2BD77D9EB69707E4E1955E4 /* Pods-BillingApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillingApp.debug.xcconfig"; path = "Target Support Files/Pods-BillingApp/Pods-BillingApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		4D2F52BC2E27A49F005E79FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4D9C0E982E27D3680000A437 /* BarcodeScannerVC.swift */,
 				4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */,
 				4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */,
 			);
@@ -411,6 +414,7 @@
 				4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */,
 				4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */,
 				4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */,
+				4D9C0E992E27D3680000A437 /* BarcodeScannerVC.swift in Sources */,
 				4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */,
 				4D6D508F2E2779BD00A99F88 /* GeneralUtility.swift in Sources */,
 				4D2F52C32E27A4DD005E79FE /* BillgenerateTVC.swift in Sources */,

@@ -294,6 +294,21 @@
             </objects>
             <point key="canvasLocation" x="2516.7938931297708" y="-16.197183098591552"/>
         </scene>
+        <!--Barcode ScannerVC-->
+        <scene sceneID="Fl9-sg-a6A">
+            <objects>
+                <viewController storyboardIdentifier="BarcodeScannerVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6IS-Di-WC3" customClass="BarcodeScannerVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cMB-H0-G6h">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="v1S-aU-leo"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqZ-s7-EBE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231" y="-17"/>
+        </scene>
         <!--Customer InfoVC-->
         <scene sceneID="704-NX-htb">
             <objects>
@@ -359,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQk-gF-4Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3237.4045801526718" y="-16.197183098591552"/>
+            <point key="canvasLocation" x="4189" y="-16"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="mpo-Wh-gJA">
