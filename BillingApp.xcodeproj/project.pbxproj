@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		1BE254650AE5D539026E89F3 /* Pods_BillingApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */; };
+		4D2F52C22E27A4DD005E79FE /* BillgenerateTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D2F52C12E27A4DD005E79FE /* BillgenerateTVC.xib */; };
+		4D2F52C32E27A4DD005E79FE /* BillgenerateTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C02E27A4DD005E79FE /* BillgenerateTVC.swift */; };
+		4D2F52C62E27A59B005E79FE /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C52E27A59B005E79FE /* Product.swift */; };
+		4D2F52C82E27B6E7005E79FE /* CustomerInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */; };
 		4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D506A2E2778D500A99F88 /* AppDelegate.swift */; };
 		4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50722E2778D500A99F88 /* SceneDelegate.swift */; };
 		4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50732E2778D500A99F88 /* ViewController.swift */; };
@@ -31,6 +35,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D2F52C02E27A4DD005E79FE /* BillgenerateTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillgenerateTVC.swift; sourceTree = "<group>"; };
+		4D2F52C12E27A4DD005E79FE /* BillgenerateTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BillgenerateTVC.xib; sourceTree = "<group>"; };
+		4D2F52C52E27A59B005E79FE /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerInfoVC.swift; sourceTree = "<group>"; };
 		4D6D503E2E27776500A99F88 /* BillingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6D506A2E2778D500A99F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D6D506B2E2778D500A99F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +78,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D2F52BC2E27A49F005E79FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */,
+				4D2F52C72E27B6E7005E79FE /* CustomerInfoVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D2F52BD2E27A4A8005E79FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D2F52C02E27A4DD005E79FE /* BillgenerateTVC.swift */,
+				4D2F52C12E27A4DD005E79FE /* BillgenerateTVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D2F52BE2E27A4AE005E79FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D2F52BF2E27A4AE005E79FE /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50A22E2783E100A99F88 /* AddProductVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D2F52C42E27A595005E79FE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D2F52C52E27A59B005E79FE /* Product.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		4D6D50352E27776500A99F88 = {
 			isa = PBXGroup;
 			children = (
@@ -191,7 +240,8 @@
 		4D6D50A02E2783BB00A99F88 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				4D6D50A22E2783E100A99F88 /* AddProductVC.swift */,
+				4D2F52BE2E27A4AE005E79FE /* View */,
+				4D2F52BF2E27A4AE005E79FE /* Controller */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -199,7 +249,9 @@
 		4D6D50A12E2783C300A99F88 /* BillGenerate */ = {
 			isa = PBXGroup;
 			children = (
-				4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */,
+				4D2F52C42E27A595005E79FE /* Model */,
+				4D2F52BD2E27A4A8005E79FE /* View */,
+				4D2F52BC2E27A49F005E79FE /* Controller */,
 			);
 			path = BillGenerate;
 			sourceTree = "<group>";
@@ -283,6 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6D50782E2778D500A99F88 /* Assets.xcassets in Resources */,
+				4D2F52C22E27A4DD005E79FE /* BillgenerateTVC.xib in Resources */,
 				4D6D50792E2778D500A99F88 /* GoogleService-Info.plist in Resources */,
 				4D6D507B2E2778D500A99F88 /* LaunchScreen.storyboard in Resources */,
 				4D6D507C2E2778D500A99F88 /* Main.storyboard in Resources */,
@@ -348,12 +401,15 @@
 				4D6D509C2E27822D00A99F88 /* AccountVC.swift in Sources */,
 				4D6D509D2E27822D00A99F88 /* ProfileTVC.swift in Sources */,
 				4D6D509E2E27822D00A99F88 /* ContactUsVC.swift in Sources */,
+				4D2F52C62E27A59B005E79FE /* Product.swift in Sources */,
+				4D2F52C82E27B6E7005E79FE /* CustomerInfoVC.swift in Sources */,
 				4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */,
 				4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */,
 				4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */,
 				4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */,
 				4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */,
 				4D6D508F2E2779BD00A99F88 /* GeneralUtility.swift in Sources */,
+				4D2F52C32E27A4DD005E79FE /* BillgenerateTVC.swift in Sources */,
 				4D6D50902E2779BD00A99F88 /* KeyboardHandler.swift in Sources */,
 				4D6D508A2E27799F00A99F88 /* RegistrationVC.swift in Sources */,
 				4D6D508B2E27799F00A99F88 /* ForgotPasswordVC.swift in Sources */,
@@ -400,6 +456,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,6 +487,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

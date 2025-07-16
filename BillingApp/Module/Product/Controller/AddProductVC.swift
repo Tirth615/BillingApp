@@ -29,6 +29,9 @@ class AddProductVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPicker()
+        txtProductPrice.addDoneButtonOnKeyboard()
+        txtProductQuantity.addDoneButtonOnKeyboard()
+        txtProductBarcode.addDoneButtonOnKeyboard()
         // Do any additional setup after loading the view.
     }
     
@@ -48,6 +51,13 @@ class AddProductVC: UIViewController {
         txtselectProductSize.inputAccessoryView = toolbar
         txtselectProductName.delegate = self
         txtselectProductSize.delegate = self
+        txtselectProductName.setPickerInputView(picker: pickerView, data: productname) { selected in
+            self.txtselectProductName.text = selected
+        }
+        
+        txtselectProductSize.setPickerInputView(picker: pickerView, data: productsize) { selected in
+            self.txtselectProductSize.text = "\(selected)"
+        }
     }
     @objc func donePressed() {
         self.view.endEditing(true)

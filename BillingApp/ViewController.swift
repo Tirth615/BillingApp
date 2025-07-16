@@ -47,7 +47,7 @@ class ViewController: UIViewController {
     }
     @IBAction func btnBillGenerate(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "BillGenerateVC") as? BillGenerateVC {
-            GeneralUtility.push(to: vc, from: self)
+            GeneralUtility.push(to: vc, from: self )
         }
     }
     

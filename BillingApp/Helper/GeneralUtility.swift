@@ -64,6 +64,21 @@ extension UITextField  {
         toolbar.setItems([flexSpace, done], animated: false)
         self.inputAccessoryView = toolbar
     }
+    func setPickerInputView<T: Equatable>(picker: UIPickerView, data: [T], onSelect: @escaping (T) -> Void) {
+        self.inputView = picker
+        picker.tag = self.tag
+
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+
+        let doneButton = UIBarButtonItem(title: "Done", style: .done, target: nil, action: nil)
+        doneButton.action = #selector(self.dismissKeyboard)
+        doneButton.target = self
+
+        toolbar.setItems([flexSpace, doneButton], animated: false)
+        self.inputAccessoryView = toolbar
+    }
     @objc private func dismissKeyboard() {
         self.resignFirstResponder()
     }
