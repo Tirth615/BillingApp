@@ -91,7 +91,7 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
             GeneralUtility.push(to: vc, from: self)
         }
         if Navigation[indexPath.row] == "Manage Stock" {
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactUsVC") as? ContactUsVC else {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ManageStockVC") as? ManageStockVC else {
                 return
             }
             GeneralUtility.push(to: vc, from: self)

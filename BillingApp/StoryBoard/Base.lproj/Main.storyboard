@@ -117,6 +117,58 @@
             </objects>
             <point key="canvasLocation" x="1044" y="641"/>
         </scene>
+        <!--Manage StockVC-->
+        <scene sceneID="QuQ-vU-nYw">
+            <objects>
+                <viewController storyboardIdentifier="ManageStockVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FFi-Qj-mUM" customClass="ManageStockVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tyw-Ku-jUd">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Stock" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbG-6A-6yY">
+                                <rect key="frame" x="142" y="118" width="109" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnL-Py-ca1">
+                                <rect key="frame" x="20" y="116.66666666666669" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Psk-Ok-Pis"/>
+                                    <constraint firstAttribute="width" constant="24" id="k1l-2e-6Ti"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="btnBack:" destination="FFi-Qj-mUM" eventType="touchUpInside" id="Q7R-29-RFU"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="x2y-AK-G66">
+                                <rect key="frame" x="20" y="169" width="353" height="615"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ome-Rc-ssd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="x2y-AK-G66" firstAttribute="top" secondItem="zbG-6A-6yY" secondAttribute="bottom" constant="30" id="3XA-TG-6cK"/>
+                            <constraint firstItem="x2y-AK-G66" firstAttribute="leading" secondItem="Ome-Rc-ssd" secondAttribute="leading" constant="20" id="Agu-NA-PWp"/>
+                            <constraint firstItem="zbG-6A-6yY" firstAttribute="top" secondItem="Ome-Rc-ssd" secondAttribute="top" id="J5v-QC-clr"/>
+                            <constraint firstItem="zbG-6A-6yY" firstAttribute="centerX" secondItem="Ome-Rc-ssd" secondAttribute="centerX" id="abG-GP-79D"/>
+                            <constraint firstItem="Ome-Rc-ssd" firstAttribute="trailing" secondItem="x2y-AK-G66" secondAttribute="trailing" constant="20" id="eOV-Wv-luF"/>
+                            <constraint firstItem="BnL-Py-ca1" firstAttribute="centerY" secondItem="zbG-6A-6yY" secondAttribute="centerY" id="lVD-aw-psV"/>
+                            <constraint firstItem="Ome-Rc-ssd" firstAttribute="bottom" secondItem="x2y-AK-G66" secondAttribute="bottom" id="s7n-7C-WQo"/>
+                            <constraint firstItem="BnL-Py-ca1" firstAttribute="leading" secondItem="Ome-Rc-ssd" secondAttribute="leading" constant="20" id="upR-Bh-BkE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tabelStock" destination="x2y-AK-G66" id="yOF-J6-gr5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yfa-OR-Vi7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1775" y="641"/>
+        </scene>
         <!--Add ProductVC-->
         <scene sceneID="mtl-Pg-t2N">
             <objects>
@@ -144,7 +196,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-ak-Jdx">
-                                <rect key="frame" x="20" y="238.33333333333334" width="353" height="314.33333333333326"/>
+                                <rect key="frame" x="20" y="238.33333333333334" width="353" height="258.33333333333326"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Select Product Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="l18-28-GS3">
                                         <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
@@ -161,18 +213,13 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Product Quantity" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Whc-Tu-tkv">
+                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Product Barcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76e-jB-80E">
                                         <rect key="frame" x="0.0" y="167.99999999999997" width="353" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Product Barcode" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="76e-jB-80E">
-                                        <rect key="frame" x="0.0" y="223.99999999999997" width="353" height="34.000000000000028"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi3-yp-kKd">
-                                        <rect key="frame" x="0.0" y="280" width="353" height="34.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="223.99999999999997" width="353" height="34.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add Product"/>
                                         <connections>
@@ -197,7 +244,6 @@
                     <connections>
                         <outlet property="txtProductBarcode" destination="76e-jB-80E" id="hh3-xc-Sof"/>
                         <outlet property="txtProductPrice" destination="6oU-3P-8yh" id="1lW-Ib-8lB"/>
-                        <outlet property="txtProductQuantity" destination="Whc-Tu-tkv" id="2hA-kA-Ims"/>
                         <outlet property="txtselectProductName" destination="l18-28-GS3" id="jv9-fP-gTR"/>
                         <outlet property="txtselectProductSize" destination="hbI-IG-mT9" id="gRu-rF-5n8"/>
                     </connections>

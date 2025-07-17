@@ -15,7 +15,6 @@ class AddProductVC: UIViewController {
     @IBOutlet weak var txtselectProductName: UITextField!
     @IBOutlet weak var txtselectProductSize: UITextField!
     @IBOutlet weak var txtProductPrice: UITextField!
-    @IBOutlet weak var txtProductQuantity: UITextField!
     @IBOutlet weak var txtProductBarcode: UITextField!
     
     //MARK: - Variabel:
@@ -30,12 +29,41 @@ class AddProductVC: UIViewController {
         super.viewDidLoad()
         setupPicker()
         txtProductPrice.addDoneButtonOnKeyboard()
-        txtProductQuantity.addDoneButtonOnKeyboard()
         txtProductBarcode.addDoneButtonOnKeyboard()
         // Do any additional setup after loading the view.
     }
     
     //MARK: - Function
+    func generateBarcode(for categoryPrefix: String, completion: @escaping (String?) -> Void) {
+        let db = Firestore.firestore()
+        let counterRef = db.collection("barcode_counters").document(categoryPrefix)
+        db.runTransaction({ (transaction, errorPointer) -> Any? in
+            var lastNumber = 0
+            let counterDoc: DocumentSnapshot
+            do {
+                try counterDoc = transaction.getDocument(counterRef)
+            } catch let error as NSError {
+                errorPointer?.pointee = error
+                return nil
+            }
+            if let current = counterDoc.data()?["lastNumber"] as? Int {
+                lastNumber = current
+            }
+            let newNumber = lastNumber + 1
+            transaction.updateData(["lastNumber": newNumber], forDocument: counterRef)
+            let barcode = "\(categoryPrefix)-" + String(format: "%03d", newNumber)
+            return barcode
+        }, completion: { (object, error) in
+            if let error = error {
+                print("⚠️ Error generating barcode: \(error.localizedDescription)")
+                completion(nil)
+            } else if let barcode = object as? String {
+                completion(barcode)
+            } else {
+                completion(nil)
+            }
+        })
+    }
     func setupPicker() {
         pickerView = UIPickerView()
         pickerView.delegate = self
@@ -67,7 +95,6 @@ class AddProductVC: UIViewController {
         txtselectProductName.text = ""
         txtselectProductSize.text = ""
         txtProductPrice.text = ""
-        txtProductQuantity.text = ""
         txtProductBarcode.text = ""
     }
     
@@ -95,13 +122,13 @@ class AddProductVC: UIViewController {
     @IBAction func btnAddProduct(_ sender: Any) {
         guard let name = txtselectProductName.text, !name.isEmpty,
               let size = txtselectProductSize.text, !size.isEmpty,
-              let priceStr = txtProductPrice.text, let price = Double(priceStr),
-              let qtyStr = txtProductQuantity.text, let quantity = Int(qtyStr) else {
+              let priceStr = txtProductPrice.text, let price = Double(priceStr) else {
             GeneralUtility.showAlert(on: self, title: "Error", message: "Please fill all required fields.")
             return
         }
         let barcode = txtProductBarcode.text ?? ""
         let productId = UUID().uuidString
+        let quantity = Int("1") ?? 1
         let db = Firestore.firestore()
         if !barcode.isEmpty {
             db.collection("products")
@@ -153,10 +180,19 @@ extension AddProductVC: UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if activeTextField == txtselectProductName {
-            txtselectProductName.text = productname[row]
-        } else if activeTextField == txtselectProductSize {
-            txtselectProductSize.text = productsize[row]
-        }
+                txtselectProductName.text = productname[row]
+            } else if activeTextField == txtselectProductSize {
+                txtselectProductSize.text = productsize[row]
+            }
+            if let name = txtselectProductName.text, !name.isEmpty,
+               let size = txtselectProductSize.text, !size.isEmpty {
+                let categoryPrefix = name.prefix(2).uppercased() // Like "PE" from "Pent"
+                generateBarcode(for: String(categoryPrefix)) { [weak self] barcode in
+                    DispatchQueue.main.async {
+                        self?.txtProductBarcode.text = barcode
+                    }
+                }
+            }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
