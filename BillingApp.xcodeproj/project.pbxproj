@@ -33,6 +33,10 @@
 		4D6D509F2E27822D00A99F88 /* ProfileTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6D50922E27822D00A99F88 /* ProfileTVC.xib */; };
 		4D6D50A32E2783E100A99F88 /* AddProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A22E2783E100A99F88 /* AddProductVC.swift */; };
 		4D6D50A52E27840200A99F88 /* BillGenerateVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */; };
+		4D88E8DF2E29179500C66792 /* InvoiceListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E8DE2E29179500C66792 /* InvoiceListVC.swift */; };
+		4D88E8E22E2918E100C66792 /* InvoiceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E8E12E2918E100C66792 /* InvoiceModel.swift */; };
+		4D88E8E52E29197C00C66792 /* InvoiceListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D88E8E32E29197C00C66792 /* InvoiceListTVC.swift */; };
+		4D88E8E62E29197C00C66792 /* InvoiceListTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D88E8E42E29197C00C66792 /* InvoiceListTVC.xib */; };
 		4D9C0E992E27D3680000A437 /* BarcodeScannerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9C0E982E27D3680000A437 /* BarcodeScannerVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +68,10 @@
 		4D6D50972E27822D00A99F88 /* AccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountVC.swift; sourceTree = "<group>"; };
 		4D6D50A22E2783E100A99F88 /* AddProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProductVC.swift; sourceTree = "<group>"; };
 		4D6D50A42E27840200A99F88 /* BillGenerateVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillGenerateVC.swift; sourceTree = "<group>"; };
+		4D88E8DE2E29179500C66792 /* InvoiceListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceListVC.swift; sourceTree = "<group>"; };
+		4D88E8E12E2918E100C66792 /* InvoiceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceModel.swift; sourceTree = "<group>"; };
+		4D88E8E32E29197C00C66792 /* InvoiceListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoiceListTVC.swift; sourceTree = "<group>"; };
+		4D88E8E42E29197C00C66792 /* InvoiceListTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InvoiceListTVC.xib; sourceTree = "<group>"; };
 		4D9C0E982E27D3680000A437 /* BarcodeScannerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScannerVC.swift; sourceTree = "<group>"; };
 		65D6D732FA379364E1D30DB7 /* Pods-BillingApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BillingApp.release.xcconfig"; path = "Target Support Files/Pods-BillingApp/Pods-BillingApp.release.xcconfig"; sourceTree = "<group>"; };
 		75996030D9C54D1CB9DCF2B0 /* Pods_BillingApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BillingApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,7 +160,6 @@
 				4D6D506B2E2778D500A99F88 /* Assets.xcassets */,
 				4D6D506C2E2778D500A99F88 /* GoogleService-Info.plist */,
 				4D6D506D2E2778D500A99F88 /* Info.plist */,
-				4D6D50732E2778D500A99F88 /* ViewController.swift */,
 			);
 			path = BillingApp;
 			sourceTree = "<group>";
@@ -169,6 +176,8 @@
 		4D6D507E2E27791600A99F88 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				4D88E8D32E2914B700C66792 /* DashBoard */,
+				4D88E8DA2E29175700C66792 /* InvoiceBill */,
 				4D6D50A12E2783C300A99F88 /* BillGenerate */,
 				4D6D50A02E2783BB00A99F88 /* Product */,
 				4D6D50992E27822D00A99F88 /* Profile */,
@@ -262,6 +271,57 @@
 			path = BillGenerate;
 			sourceTree = "<group>";
 		};
+		4D88E8D32E2914B700C66792 /* DashBoard */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E8D42E2914C300C66792 /* Controller */,
+			);
+			path = DashBoard;
+			sourceTree = "<group>";
+		};
+		4D88E8D42E2914C300C66792 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D6D50732E2778D500A99F88 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D88E8DA2E29175700C66792 /* InvoiceBill */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E8DC2E29176900C66792 /* Controller */,
+				4D88E8DB2E29176300C66792 /* View */,
+				4D88E8E02E2918D000C66792 /* Model */,
+			);
+			path = InvoiceBill;
+			sourceTree = "<group>";
+		};
+		4D88E8DB2E29176300C66792 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E8E32E29197C00C66792 /* InvoiceListTVC.swift */,
+				4D88E8E42E29197C00C66792 /* InvoiceListTVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4D88E8DC2E29176900C66792 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E8DE2E29179500C66792 /* InvoiceListVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4D88E8E02E2918D000C66792 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D88E8E12E2918E100C66792 /* InvoiceModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		77B569B894A3E57BF2AB22EE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -342,6 +402,7 @@
 			files = (
 				4D6D50782E2778D500A99F88 /* Assets.xcassets in Resources */,
 				4D2F52C22E27A4DD005E79FE /* BillgenerateTVC.xib in Resources */,
+				4D88E8E62E29197C00C66792 /* InvoiceListTVC.xib in Resources */,
 				4D6D50792E2778D500A99F88 /* GoogleService-Info.plist in Resources */,
 				4D6D507B2E2778D500A99F88 /* LaunchScreen.storyboard in Resources */,
 				4D6D507C2E2778D500A99F88 /* Main.storyboard in Resources */,
@@ -403,6 +464,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D6D509A2E27822D00A99F88 /* ProfileVC.swift in Sources */,
+				4D88E8E22E2918E100C66792 /* InvoiceModel.swift in Sources */,
 				4D6D509B2E27822D00A99F88 /* ChangePasswordVC.swift in Sources */,
 				4D6D509C2E27822D00A99F88 /* AccountVC.swift in Sources */,
 				4D6D509D2E27822D00A99F88 /* ProfileTVC.swift in Sources */,
@@ -420,6 +482,8 @@
 				4D2F52C32E27A4DD005E79FE /* BillgenerateTVC.swift in Sources */,
 				4D6D50902E2779BD00A99F88 /* KeyboardHandler.swift in Sources */,
 				4D6D508A2E27799F00A99F88 /* RegistrationVC.swift in Sources */,
+				4D88E8E52E29197C00C66792 /* InvoiceListTVC.swift in Sources */,
+				4D88E8DF2E29179500C66792 /* InvoiceListVC.swift in Sources */,
 				4D6D508B2E27799F00A99F88 /* ForgotPasswordVC.swift in Sources */,
 				4D6D508C2E27799F00A99F88 /* LoginVC.swift in Sources */,
 			);

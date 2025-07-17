@@ -17,27 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="38" translatesAutoresizingMaskIntoConstraints="NO" id="kvm-Wt-Ks6">
-                                <rect key="frame" x="20" y="419.66666666666669" width="353" height="106.66666666666669"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9J-4e-FUV">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34.333333333333336"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Add Product"/>
-                                        <connections>
-                                            <action selector="btnAddProduct:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1sk-9j-MyB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M87-v0-iC6">
-                                        <rect key="frame" x="0.0" y="72.333333333333314" width="353" height="34.333333333333343"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Bill generate"/>
-                                        <connections>
-                                            <action selector="btnBillGenerate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uB9-dA-dFf"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHv-bm-AaL">
                                 <rect key="frame" x="349" y="160.33333333333334" width="24" height="24"/>
                                 <constraints>
@@ -56,25 +35,87 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MAh-m9-JrH">
+                                <rect key="frame" x="20" y="202.33333333333337" width="353" height="140"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="6Ak-Il-4xJ"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MAh-m9-JrH" secondAttribute="trailing" constant="20" id="3x7-BP-CCB"/>
                             <constraint firstItem="spA-HF-FWl" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="71E-6o-MPz"/>
-                            <constraint firstItem="kvm-Wt-Ks6" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="84O-dc-rRP"/>
                             <constraint firstItem="DHv-bm-AaL" firstAttribute="centerY" secondItem="spA-HF-FWl" secondAttribute="centerY" id="D5Z-Jq-SaI"/>
-                            <constraint firstItem="kvm-Wt-Ks6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ebu-jz-O8S"/>
-                            <constraint firstItem="kvm-Wt-Ks6" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Znt-1B-G5B"/>
+                            <constraint firstItem="MAh-m9-JrH" firstAttribute="top" secondItem="spA-HF-FWl" secondAttribute="bottom" constant="20" id="JXe-az-w37"/>
+                            <constraint firstItem="MAh-m9-JrH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="SE9-fw-ehU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DHv-bm-AaL" secondAttribute="trailing" constant="20" id="j4V-k3-bKv"/>
                             <constraint firstItem="spA-HF-FWl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="lme-if-bfx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kvm-Wt-Ks6" secondAttribute="trailing" constant="20" id="mXV-kM-Di6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Yre-VS-2yf"/>
+                    <connections>
+                        <outlet property="myTableView" destination="MAh-m9-JrH" id="HQT-UA-fLv"/>
+                        <outlet property="tableheightconstraint" destination="6Ak-Il-4xJ" id="Bn4-uC-5TO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1043.5114503816794" y="-27.464788732394368"/>
+        </scene>
+        <!--Invoice ListVC-->
+        <scene sceneID="gAp-XP-iP2">
+            <objects>
+                <viewController storyboardIdentifier="InvoiceListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Bwf-n3-HYp" customClass="InvoiceListVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uHJ-mo-MpH">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invoice List" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNJ-fH-qx5">
+                                <rect key="frame" x="154" y="118" width="85" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7ze-vh-wsI">
+                                <rect key="frame" x="20" y="116.66666666666669" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="O4E-WL-VcD"/>
+                                    <constraint firstAttribute="width" constant="24" id="rcs-1C-o3T"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system" title=""/>
+                                <connections>
+                                    <action selector="btnBack:" destination="Bwf-n3-HYp" eventType="touchUpInside" id="891-zX-wEW"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DkT-O3-j1Z">
+                                <rect key="frame" x="20" y="169" width="353" height="615"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="i7Z-bT-TKP"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7ze-vh-wsI" firstAttribute="centerY" secondItem="lNJ-fH-qx5" secondAttribute="centerY" id="1IT-pS-C03"/>
+                            <constraint firstItem="lNJ-fH-qx5" firstAttribute="centerX" secondItem="i7Z-bT-TKP" secondAttribute="centerX" id="7U9-ah-SKO"/>
+                            <constraint firstItem="7ze-vh-wsI" firstAttribute="leading" secondItem="i7Z-bT-TKP" secondAttribute="leading" constant="20" id="EQp-BU-fQw"/>
+                            <constraint firstItem="DkT-O3-j1Z" firstAttribute="leading" secondItem="i7Z-bT-TKP" secondAttribute="leading" constant="20" id="Rou-z3-AVT"/>
+                            <constraint firstItem="DkT-O3-j1Z" firstAttribute="top" secondItem="lNJ-fH-qx5" secondAttribute="bottom" constant="30" id="WXN-iY-EMq"/>
+                            <constraint firstItem="lNJ-fH-qx5" firstAttribute="top" secondItem="i7Z-bT-TKP" secondAttribute="top" id="o0y-xA-pY5"/>
+                            <constraint firstItem="i7Z-bT-TKP" firstAttribute="trailing" secondItem="DkT-O3-j1Z" secondAttribute="trailing" constant="20" id="ogS-Ib-wFK"/>
+                            <constraint firstItem="i7Z-bT-TKP" firstAttribute="bottom" secondItem="DkT-O3-j1Z" secondAttribute="bottom" id="vdK-ij-Y6g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableInVoice" destination="DkT-O3-j1Z" id="X2C-2L-x0x"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rBy-qB-Nfj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="641"/>
         </scene>
         <!--Add ProductVC-->
         <scene sceneID="mtl-Pg-t2N">
@@ -374,7 +415,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dQk-gF-4Ey" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4189" y="-16"/>
+            <point key="canvasLocation" x="3941" y="-16"/>
         </scene>
         <!--LoginVC-->
         <scene sceneID="mpo-Wh-gJA">
@@ -475,7 +516,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymy-8U-2I7" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1044" y="673"/>
+            <point key="canvasLocation" x="1066" y="1336"/>
         </scene>
         <!--RegistrationVC-->
         <scene sceneID="9nl-aB-jSz">
@@ -552,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i6O-Zh-yb5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1789" y="673"/>
+            <point key="canvasLocation" x="1811" y="1336"/>
         </scene>
         <!--Forgot PasswordVC-->
         <scene sceneID="JFx-SW-U4r">
@@ -617,7 +658,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TkD-r3-wAr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2517" y="673"/>
+            <point key="canvasLocation" x="2540" y="1336"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1jb-FI-4Kr">
@@ -786,7 +827,7 @@
         <!--Change PasswordVC-->
         <scene sceneID="0gO-jQ-ULt">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wru-uA-3uV" customClass="ChangePasswordVC" customModule="ChatLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Wru-uA-3uV" customClass="ChangePasswordVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z5D-ky-Yao">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -874,7 +915,7 @@
         <!--Contact UsVC-->
         <scene sceneID="qvy-9l-pQp">
             <objects>
-                <viewController storyboardIdentifier="ContactUsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eb7-eo-qK5" customClass="ContactUsVC" customModule="ChatLive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactUsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Eb7-eo-qK5" customClass="ContactUsVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H6Z-K2-KFl">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
