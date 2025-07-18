@@ -88,13 +88,21 @@ extension ManageStockVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManageStockTVC") as? ManageStockTVC  else { return UITableViewCell() }
         let item = categoryCountsArray[indexPath.row]
+        if indexPath.row != 0 {
+            cell.lblQuantity.isHidden = true
+            cell.lblProductName.isHidden = true
+        }
         cell.lblName.text = item.category
         cell.lblQty.text = "Qty: \(item.count)"
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        if indexPath.row != 0{
+            return 30
+        }else{
+            return 50
+        }
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = categoryCountsArray[indexPath.row]

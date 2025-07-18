@@ -59,7 +59,7 @@ class BillGenerateVC: UIViewController {
             return
         }
         let db = Firestore.firestore()
-        db.collection("products").whereField("barcode", isEqualTo: barcode).getDocuments { snapshot, error in
+        db.collectionGroup("items").whereField("barcode", isEqualTo: barcode).getDocuments { snapshot, error in
             if let error = error {
                 GeneralUtility.showAlert(on: self, title: "Error", message: error.localizedDescription)
                 return

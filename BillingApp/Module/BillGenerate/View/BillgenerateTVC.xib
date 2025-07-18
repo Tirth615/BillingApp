@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="o4h-vw-2qf">
-                        <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="71"/>
+                        <rect key="frame" x="0.0" y="23.666666666666671" width="274.66666666666669" height="71"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="9" translatesAutoresizingMaskIntoConstraints="NO" id="DcE-Y2-m8L">
                                 <rect key="frame" x="0.0" y="0.0" width="274.66666666666669" height="20.333333333333332"/>
@@ -30,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KxF-Fk-zMQ">
-                                        <rect key="frame" x="45" y="0.0" width="229.66666666666663" height="20.333333333333332"/>
+                                        <rect key="frame" x="44.999999999999986" y="0.0" width="229.66666666666663" height="20.333333333333332"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -47,8 +47,9 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="o4h-vw-2qf" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="8lT-mF-aaV"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="o4h-vw-2qf" secondAttribute="trailing" constant="20" symbolic="YES" id="8oU-ta-5Vu"/>
-                    <constraint firstItem="o4h-vw-2qf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="9Dd-g8-vEo"/>
+                    <constraint firstItem="o4h-vw-2qf" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="top" id="9Dd-g8-vEo"/>
                     <constraint firstItem="o4h-vw-2qf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="ET8-0z-rnh"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="o4h-vw-2qf" secondAttribute="bottom" constant="20" symbolic="YES" id="uNq-Jv-Yuh"/>
                 </constraints>

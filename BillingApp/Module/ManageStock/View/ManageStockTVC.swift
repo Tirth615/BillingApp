@@ -10,6 +10,8 @@ import UIKit
 class ManageStockTVC: UITableViewCell {
 
     
+    @IBOutlet weak var lblQuantity: UILabel!
+    @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblQty: UILabel!
     

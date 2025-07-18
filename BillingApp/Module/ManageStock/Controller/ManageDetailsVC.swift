@@ -80,4 +80,7 @@ extension ManageDetailsVC: UITableViewDelegate, UITableViewDataSource {
         cell.lblPrice.text = "Price: \(product.price)"
         return cell
     }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
 }
