@@ -11,7 +11,7 @@
 - 📦 Add, update, and manage item entries
 - 🧮 Automatic invoice number generation (e.g., `INV-0001`)
 - 🧾 Generate professional invoices as PDFs
-- 📤 Export or share generated PDFs via email or apps
+- 📤 Export or share generated PDFs
 - 🔍 Barcode search using Firestore indexes
 - ⏱ Real-time Firestore integration
 - ✅ Offline support with Firestore cache
