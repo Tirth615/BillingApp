@@ -169,6 +169,59 @@
             </objects>
             <point key="canvasLocation" x="1775" y="641"/>
         </scene>
+        <!--Manage DetailsVC-->
+        <scene sceneID="exH-Bl-fwU">
+            <objects>
+                <viewController storyboardIdentifier="ManageDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="DDd-Vm-lQQ" customClass="ManageDetailsVC" customModule="BillingApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uNY-oL-POZ">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edW-Wt-eTH">
+                                <rect key="frame" x="134" y="118" width="125" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZhD-kD-ZoY">
+                                <rect key="frame" x="20" y="116.66666666666669" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="Xev-Qw-hyc"/>
+                                    <constraint firstAttribute="height" constant="24" id="en0-KE-kxD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="arrow.backward" catalog="system"/>
+                                <connections>
+                                    <action selector="btnBack:" destination="DDd-Vm-lQQ" eventType="touchUpInside" id="g0L-xS-ukE"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mk2-0D-SRb">
+                                <rect key="frame" x="20" y="169" width="353" height="615"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5gR-8a-FZI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZhD-kD-ZoY" firstAttribute="centerY" secondItem="edW-Wt-eTH" secondAttribute="centerY" id="Jvg-PO-Qi8"/>
+                            <constraint firstItem="ZhD-kD-ZoY" firstAttribute="leading" secondItem="5gR-8a-FZI" secondAttribute="leading" constant="20" id="Xs6-nj-rDu"/>
+                            <constraint firstItem="mk2-0D-SRb" firstAttribute="leading" secondItem="5gR-8a-FZI" secondAttribute="leading" constant="20" id="aUM-rd-b2K"/>
+                            <constraint firstItem="edW-Wt-eTH" firstAttribute="centerX" secondItem="5gR-8a-FZI" secondAttribute="centerX" id="efp-oE-aiW"/>
+                            <constraint firstItem="mk2-0D-SRb" firstAttribute="top" secondItem="edW-Wt-eTH" secondAttribute="bottom" constant="30" id="jIK-eY-Bc1"/>
+                            <constraint firstItem="5gR-8a-FZI" firstAttribute="trailing" secondItem="mk2-0D-SRb" secondAttribute="trailing" constant="20" id="nmF-TJ-cNv"/>
+                            <constraint firstItem="5gR-8a-FZI" firstAttribute="bottom" secondItem="mk2-0D-SRb" secondAttribute="bottom" id="tcg-FG-ApB"/>
+                            <constraint firstItem="edW-Wt-eTH" firstAttribute="top" secondItem="5gR-8a-FZI" secondAttribute="top" id="vYk-nD-yTM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="lblCategoryName" destination="edW-Wt-eTH" id="bu5-Wu-1bj"/>
+                        <outlet property="tabelCategoryList" destination="mk2-0D-SRb" id="ieE-R3-miH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7iF-c9-9NH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540" y="641"/>
+        </scene>
         <!--Add ProductVC-->
         <scene sceneID="mtl-Pg-t2N">
             <objects>

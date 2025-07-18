@@ -15,6 +15,9 @@
 		4D3F20F82E27C0A100561D89 /* PDFGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D3F20F72E27C0A100561D89 /* PDFGenerator.swift */; };
 		4D4590E12E29318800C95296 /* BarcodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4590E02E29318800C95296 /* BarcodeGenerator.swift */; };
 		4D6B7F932E2A0FFB0026C1FE /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B7F922E2A0FFB0026C1FE /* ProductService.swift */; };
+		4D6B7F952E2A237C0026C1FE /* ManageDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B7F942E2A237C0026C1FE /* ManageDetailsVC.swift */; };
+		4D6B7F982E2A253E0026C1FE /* ManageDetailsTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D6B7F972E2A253E0026C1FE /* ManageDetailsTVC.xib */; };
+		4D6B7F992E2A253E0026C1FE /* ManageDetailsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6B7F962E2A253E0026C1FE /* ManageDetailsTVC.swift */; };
 		4D6D50752E2778D500A99F88 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D506A2E2778D500A99F88 /* AppDelegate.swift */; };
 		4D6D50762E2778D500A99F88 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50722E2778D500A99F88 /* SceneDelegate.swift */; };
 		4D6D50772E2778D500A99F88 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D6D50732E2778D500A99F88 /* ViewController.swift */; };
@@ -54,6 +57,9 @@
 		4D3F20F72E27C0A100561D89 /* PDFGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFGenerator.swift; sourceTree = "<group>"; };
 		4D4590E02E29318800C95296 /* BarcodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeGenerator.swift; sourceTree = "<group>"; };
 		4D6B7F922E2A0FFB0026C1FE /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
+		4D6B7F942E2A237C0026C1FE /* ManageDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDetailsVC.swift; sourceTree = "<group>"; };
+		4D6B7F962E2A253E0026C1FE /* ManageDetailsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDetailsTVC.swift; sourceTree = "<group>"; };
+		4D6B7F972E2A253E0026C1FE /* ManageDetailsTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageDetailsTVC.xib; sourceTree = "<group>"; };
 		4D6D503E2E27776500A99F88 /* BillingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BillingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D6D506A2E2778D500A99F88 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4D6D506B2E2778D500A99F88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -352,6 +358,7 @@
 			isa = PBXGroup;
 			children = (
 				4D88E8ED2E2925AD00C66792 /* ManageStockVC.swift */,
+				4D6B7F942E2A237C0026C1FE /* ManageDetailsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -361,6 +368,8 @@
 			children = (
 				4D88E8F12E2925D600C66792 /* ManageStockTVC.swift */,
 				4D88E8F22E2925D600C66792 /* ManageStockTVC.xib */,
+				4D6B7F962E2A253E0026C1FE /* ManageDetailsTVC.swift */,
+				4D6B7F972E2A253E0026C1FE /* ManageDetailsTVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 				4D6D507B2E2778D500A99F88 /* LaunchScreen.storyboard in Resources */,
 				4D88E8F42E2925D600C66792 /* ManageStockTVC.xib in Resources */,
 				4D6D507C2E2778D500A99F88 /* Main.storyboard in Resources */,
+				4D6B7F982E2A253E0026C1FE /* ManageDetailsTVC.xib in Resources */,
 				4D6D509F2E27822D00A99F88 /* ProfileTVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -543,6 +553,7 @@
 				4D6D509B2E27822D00A99F88 /* ChangePasswordVC.swift in Sources */,
 				4D6D509C2E27822D00A99F88 /* AccountVC.swift in Sources */,
 				4D6D509D2E27822D00A99F88 /* ProfileTVC.swift in Sources */,
+				4D6B7F992E2A253E0026C1FE /* ManageDetailsTVC.swift in Sources */,
 				4D6B7F932E2A0FFB0026C1FE /* ProductService.swift in Sources */,
 				4D6D509E2E27822D00A99F88 /* ContactUsVC.swift in Sources */,
 				4D2F52C62E27A59B005E79FE /* Product.swift in Sources */,
@@ -565,6 +576,7 @@
 				4D88E8E52E29197C00C66792 /* InvoiceListTVC.swift in Sources */,
 				4D88E8DF2E29179500C66792 /* InvoiceListVC.swift in Sources */,
 				4D6D508B2E27799F00A99F88 /* ForgotPasswordVC.swift in Sources */,
+				4D6B7F952E2A237C0026C1FE /* ManageDetailsVC.swift in Sources */,
 				4D6D508C2E27799F00A99F88 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

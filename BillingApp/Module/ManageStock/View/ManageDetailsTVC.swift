@@ -9,6 +9,12 @@ import UIKit
 
 class ManageDetailsTVC: UITableViewCell {
 
+    
+    @IBOutlet weak var lblBarcode: UILabel!
+    @IBOutlet weak var lblSize: UILabel!
+    @IBOutlet weak var lblPrice: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
