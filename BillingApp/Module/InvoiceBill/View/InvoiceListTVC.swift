@@ -9,8 +9,11 @@ import UIKit
 
 class InvoiceListTVC: UITableViewCell {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var lblBillno_Name: UILabel!
     @IBOutlet weak var lblTotal_date: UILabel!
+    
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,8 +21,5 @@ class InvoiceListTVC: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
 }

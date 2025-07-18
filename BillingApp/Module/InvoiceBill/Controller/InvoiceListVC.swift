@@ -23,7 +23,6 @@ class InvoiceListVC: UIViewController {
         self.tableInVoice.dataSource = self
         tableInVoice.register(UINib(nibName: "InvoiceListTVC", bundle: nil), forCellReuseIdentifier: "InvoiceListTVC")
         fetchInvoices()
-        // Do any additional setup after loading the view.
     }
     //MARK: - Function
     func fetchInvoices() {
@@ -54,27 +53,25 @@ class InvoiceListVC: UIViewController {
                         GeneralUtility.hideLoader(from: window)
                     }
                 }
-                
                 DispatchQueue.main.async {
                     self.tableInVoice.reloadData()
                 }
             }
     }
+    
     //MARK: - Buton Action
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
-
+//MARK: - Extension Table View Delegate
 extension InvoiceListVC : UITableViewDelegate , UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return invoiceList.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceListTVC") as? InvoiceListTVC  else { return UITableViewCell() }
-        
         let invoice = invoiceList[indexPath.row]
         cell.lblBillno_Name.text = "\(invoice.invoiceNumber) - \(invoice.customerName)"
         let formatter = DateFormatter()
@@ -85,18 +82,14 @@ extension InvoiceListVC : UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedInvoice = invoiceList[indexPath.row]
-
-        // Prepare invoice data for PDF
         var invoiceData: [String: Any] = [
             "invoiceNumber": selectedInvoice.invoiceNumber,
             "customerName": selectedInvoice.customerName,
             "mobile": selectedInvoice.mobile,
             "date": selectedInvoice.date,
             "total": selectedInvoice.total,
-            "products": selectedInvoice.products  // Ensure it's [[String: Any]]
+            "products": selectedInvoice.products
         ]
-
-        // Generate PDF
         if let pdfData = PDFGenerator.generateInvoicePDF(invoiceData: invoiceData) {
             let tmpURL = FileManager.default.temporaryDirectory.appendingPathComponent("Invoice_\(selectedInvoice.invoiceNumber).pdf")
             do {
