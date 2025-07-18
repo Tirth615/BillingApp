@@ -28,7 +28,7 @@ class ManageStockVC: UIViewController {
         fetchProducts()
     }
     
-    //MARK: - Fetching Products
+    //MARK: - Function
     func fetchProducts() {
         categoryCount = [:]
         categoryCountsArray = []
@@ -37,11 +37,11 @@ class ManageStockVC: UIViewController {
                 GeneralUtility.showLoader(on: window)
             }
             if let error = error {
-                print("🔥 Error fetching categories: \(error)")
+                print("Error fetching categories: \(error)")
                 return
             }
             guard let documents = snapshot?.documents else {
-                print("⚠️ No categories found.")
+                print("No categories found.")
                 return
             }
             let group = DispatchGroup()
@@ -72,19 +72,17 @@ class ManageStockVC: UIViewController {
         }
     }
     
-    //MARK: - Back
+    //MARK: - BUtton Action
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
-//MARK: - Table View
+//MARK: - Table View Delegate
 extension ManageStockVC: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return categoryCountsArray.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ManageStockTVC") as? ManageStockTVC  else { return UITableViewCell() }
         let item = categoryCountsArray[indexPath.row]
@@ -96,7 +94,6 @@ extension ManageStockVC: UITableViewDelegate, UITableViewDataSource {
         cell.lblQty.text = "Qty: \(item.count)"
         return cell
     }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row != 0{
             return 30

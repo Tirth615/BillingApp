@@ -61,16 +61,17 @@ class ManageDetailsVC: UIViewController {
             }
     }
     
+    //MARK: - Button Action
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
 }
 
+//MARK:  - Extension Table View Delegate
 extension ManageDetailsVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let product = products[indexPath.row]
         lblCategoryName.text = product.name

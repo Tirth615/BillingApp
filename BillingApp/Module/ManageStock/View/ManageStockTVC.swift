@@ -9,13 +9,13 @@ import UIKit
 
 class ManageStockTVC: UITableViewCell {
 
-    
+    //MARK: - IBOutlets
     @IBOutlet weak var lblQuantity: UILabel!
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblQty: UILabel!
     
-    
+    //MARK: -LifeCycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
