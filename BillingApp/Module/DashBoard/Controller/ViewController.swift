@@ -11,9 +11,11 @@ import FirebaseAuth
 
 class ViewController: UIViewController {
 
+    //MARK: - IBOutlets
     @IBOutlet weak var myTableView: UITableView!
     @IBOutlet weak var tableheightconstraint: NSLayoutConstraint!
     
+    //MARK: - Variables
     var Navigation : [String] = [
         "Create Bill",
         "Add Item",
@@ -22,6 +24,7 @@ class ViewController: UIViewController {
         "View Reports"
     ]
     
+    //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.myTableView.delegate = self
@@ -33,9 +36,9 @@ class ViewController: UIViewController {
         checklogin()
     }
 
+    //MARK: - Function
     func checklogin() {
         if let userId = UserDefaults.standard.string(forKey: "userid") {
-            fetchUsers()
             print("User is logged in with id: \(userId)")
         } else {
             print("No user logged in. Showing login screen.")
@@ -45,11 +48,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func fetchUsers() {
-        print("Hello")
-    }
-    
-    
+    //MARK: - Button Action
     @IBAction func btnProfile(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(identifier: "ProfileVC") as? ProfileVC {
             GeneralUtility.push(to: vc, from: self)
@@ -62,7 +61,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Navigation.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProfileTVC", for: indexPath) as? ProfileTVC else {
             return UITableViewCell()
@@ -70,7 +68,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         cell.settingname.text = Navigation[indexPath.row]
         return cell
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if Navigation[indexPath.row] == "Create Bill" {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "BillGenerateVC") as? BillGenerateVC else {

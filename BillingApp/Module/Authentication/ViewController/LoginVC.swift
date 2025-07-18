@@ -107,8 +107,6 @@ extension LoginVC : ASAuthorizationControllerDelegate, ASAuthorizationController
             let userId = credential.user
             let email = credential.email ?? "N/A"
             let fullName = credential.fullName?.givenName ?? "No Name"
-
-            print("🍎 Apple Sign In Success")
             print("UserID: \(userId)")
             print("Email: \(email)")
             print("Name: \(fullName)")
