@@ -16,7 +16,6 @@ class CustomerInfoVC: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var txtCustomerName: UITextField!
     @IBOutlet weak var txtCustomermobile: UITextField!
-    
     @IBOutlet weak var btnSubmit: UIButton!
     @IBOutlet weak var btnGoToHomePage: UIButton!
     
@@ -25,15 +24,15 @@ class CustomerInfoVC: UIViewController {
     var billedProducts: [Product] = []
     var totalAmount: Double = 0.0
     
-    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         txtCustomerName.addDoneButtonOnKeyboard()
         txtCustomermobile.addDoneButtonOnKeyboard()
         btnGoToHomePage.isHidden = true
-        // Do any additional setup after loading the view.
     }
+    
+    //MARK: - Function
     func generateInvoiceNumber(completion: @escaping (String?) -> Void) {
         let db = Firestore.firestore()
         let invoiceRef = db.collection("counters").document("invoices")
@@ -62,6 +61,7 @@ class CustomerInfoVC: UIViewController {
         }
     }
     
+    //MARK: - Button Action
     @IBAction func btnGoToHomePage(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ViewController") as? ViewController else {
             return

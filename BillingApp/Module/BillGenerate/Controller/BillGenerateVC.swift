@@ -32,7 +32,6 @@ class BillGenerateVC: UIViewController {
         tableProduct.register(UINib(nibName: "BillgenerateTVC", bundle: nil), forCellReuseIdentifier: "BillgenerateTVC")
         tableProduct.delegate = self
         tableProduct.dataSource = self
-        // Do any additional setup after loading the view.
     }
     
     //MARK: - Function
@@ -52,7 +51,6 @@ class BillGenerateVC: UIViewController {
     @IBAction func btnBack(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
     @IBAction func btnAdd(_ sender: Any) {
         guard let barcode = txtBarcode.text, !barcode.isEmpty else {
             GeneralUtility.showAlert(on: self, title: "Error", message: "Enter or scan a barcode.")
@@ -83,7 +81,6 @@ class BillGenerateVC: UIViewController {
             self.txtBarcode.text = ""
         }
     }
-    
     @IBAction func btnScanner(_ sender: Any) {
         if let vc = self.storyboard?.instantiateViewController(withIdentifier: "BarcodeScannerVC") as? BarcodeScannerVC {
             vc.onCodeScanned = { scannedCode in
@@ -93,7 +90,6 @@ class BillGenerateVC: UIViewController {
             GeneralUtility.present(to: vc, from: self)
         }
     }
-    
     @IBAction func btnConfirm(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CustomerInfoVC") as? CustomerInfoVC else { return }
         vc.billedProducts = self.billedProducts
@@ -107,7 +103,6 @@ extension BillGenerateVC : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return billedProducts.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "BillgenerateTVC") as? BillgenerateTVC  else { return UITableViewCell() }
         let product = billedProducts[indexPath.row]
@@ -133,9 +128,8 @@ extension BillGenerateVC : UITableViewDelegate, UITableViewDataSource {
 
 //MARK: - Extension Scanner
 extension BillGenerateVC : AVCaptureMetadataOutputObjectsDelegate {
-    func metadataOutput(_ output: AVCaptureMetadataOutput,
-                        didOutput metadataObjects: [AVMetadataObject],
-                        from connection: AVCaptureConnection) {
+    func metadataOutput(_ output: AVCaptureMetadataOutput,didOutput metadataObjects:[AVMetadataObject],from connection: AVCaptureConnection) {
+        
         captureSession?.stopRunning()
         if let metadataObject = metadataObjects.first,
            let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,

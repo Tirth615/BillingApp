@@ -43,7 +43,6 @@ class BarcodeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             return
         }
         captureSession?.addInput(videoInput)
-        
         let metadataOutput = AVCaptureMetadataOutput()
         guard captureSession?.canAddOutput(metadataOutput) == true else {
             GeneralUtility.showAlert(on: self, title: "Error", message: "Cannot scan barcode.")
@@ -52,13 +51,11 @@ class BarcodeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         captureSession?.addOutput(metadataOutput)
         metadataOutput.setMetadataObjectsDelegate(self, queue: .main)
         metadataOutput.metadataObjectTypes = [.ean8, .ean13, .pdf417, .code128, .code39]
-        
         previewLayer = AVCaptureVideoPreviewLayer(session: captureSession!)
         previewLayer?.videoGravity = .resizeAspectFill
         if let layer = previewLayer {
             view.layer.insertSublayer(layer, at: 0)
         }
-        
         addFrameOverlay()
         DispatchQueue.global(qos: .userInitiated).async {
             self.captureSession?.startRunning()
@@ -83,7 +80,6 @@ class BarcodeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         frameView.layer.borderWidth = 2
         frameView.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(frameView)
-        
         NSLayoutConstraint.activate([
             frameView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             frameView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
@@ -102,7 +98,6 @@ class BarcodeScannerVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         cancelBtn.translatesAutoresizingMaskIntoConstraints = false
         cancelBtn.addTarget(self, action: #selector(cancelTapped), for: .touchUpInside)
         view.addSubview(cancelBtn)
-        
         NSLayoutConstraint.activate([
             cancelBtn.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 16),
             cancelBtn.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),

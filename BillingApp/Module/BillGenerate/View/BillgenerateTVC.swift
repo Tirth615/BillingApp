@@ -9,11 +9,12 @@ import UIKit
 
 class BillgenerateTVC: UITableViewCell {
 
-    
+    //MARK: - IBOutelts
     @IBOutlet weak var lblProductName: UILabel!
     @IBOutlet weak var lblProductSize: UILabel!
     @IBOutlet weak var lblPrice: UILabel!
     
+    //MARK: - Life Cycle
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
