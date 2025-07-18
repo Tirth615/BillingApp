@@ -31,21 +31,24 @@ class ManageStockVC: UIViewController {
     //MARK: - Function
     func fetchProducts() {
         db.collection("products").getDocuments { snapshot, error in
-            if let error = error {
-                print("Error fetching products: \(error)")
-                return
+                if let error = error {
+                    print("Error fetching products: \(error)")
+                    return
+                }
+                guard let documents = snapshot?.documents else { return }
+                
+                self.products = documents.map { doc in
+                    let data = doc.data()
+                    return ProductModel(
+                        id: doc.documentID,
+                        name: data["name"] as? String ?? "Unnamed",
+                        quantity: data["quantity"] as? Int ?? 0,
+                        barcode: data["barcode"] as? String ?? "",
+                        size: data["size"] as? String ?? ""
+                    )
+                }
+                self.tabelStock.reloadData()
             }
-            guard let documents = snapshot?.documents else { return }
-            self.products = documents.map { doc in
-                let data = doc.data()
-                return ProductModel(
-                    id: doc.documentID,
-                    name: data["name"] as? String ?? "Unnamed",
-                    quantity: data["quantity"] as? Int ?? 0
-                )
-            }
-            self.tabelStock.reloadData()
-        }
     }
     
     func updateStock(for product: ProductModel, newQuantity: Int) {
@@ -101,6 +104,9 @@ extension ManageStockVC: UITableViewDelegate, UITableViewDataSource {
         present(alert, animated: true)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 200
+        return 50
     }
 }
+
+
+

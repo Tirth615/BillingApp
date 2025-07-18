@@ -7,7 +7,9 @@
 
 
 struct ProductModel {
-    let id: String
-    let name: String
+    var id: String
+    var name: String
     var quantity: Int
+    var barcode: String
+    var size: String
 }
