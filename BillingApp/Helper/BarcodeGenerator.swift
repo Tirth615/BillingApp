@@ -36,7 +36,7 @@ class BarcodeGenerator {
             return barcode
         }, completion: { (object, error) in
             if let error = error {
-                print("⚠️ Error generating barcode: \(error.localizedDescription)")
+                print("Error generating barcode: \(error.localizedDescription)")
                 completion(nil)
             } else if let barcode = object as? String {
                 completion(barcode)

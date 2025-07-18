@@ -19,7 +19,7 @@ class ProductService {
     func fetchAllProducts(completion: @escaping ([[String: Any]]) -> Void) {
         db.collection("products").getDocuments { snapshot, error in
             if let error = error {
-                print("⚠️ Error fetching products: \(error.localizedDescription)")
+                print("Error fetching products: \(error.localizedDescription)")
                 completion([])
                 return
             }
@@ -39,7 +39,7 @@ class ProductService {
     func fetchProductsGroupedByCategory(completion: @escaping ([String: [[String: Any]]]) -> Void) {
         db.collection("products").getDocuments { snapshot, error in
             if let error = error {
-                print("⚠️ Error fetching products: \(error.localizedDescription)")
+                print("Error fetching products: \(error.localizedDescription)")
                 completion([:])
                 return
             }
