@@ -127,13 +127,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		4D2F52BE2E27A4AE005E79FE /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		4D2F52BF2E27A4AE005E79FE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -277,7 +270,6 @@
 		4D6D50A02E2783BB00A99F88 /* Product */ = {
 			isa = PBXGroup;
 			children = (
-				4D2F52BE2E27A4AE005E79FE /* View */,
 				4D2F52BF2E27A4AE005E79FE /* Controller */,
 			);
 			path = Product;

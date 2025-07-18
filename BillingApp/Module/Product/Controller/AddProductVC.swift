@@ -31,10 +31,9 @@ class AddProductVC: UIViewController {
         txtProductBarcode.addDoneButtonOnKeyboard()
     }
     
-    //MARK: - Barcode Generation
+    //MARK: - Function
     func generateBarcode(for categoryPrefix: String, completion: @escaping (String?) -> Void) {
         let counterRef = db.collection("barcode_counters").document(categoryPrefix)
-        
         db.runTransaction({ (transaction, errorPointer) -> Any? in
             let counterDoc: DocumentSnapshot
             do {
@@ -43,7 +42,6 @@ class AddProductVC: UIViewController {
                 transaction.setData(["lastNumber": 1], forDocument: counterRef)
                 return "\(categoryPrefix)-001"
             }
-            
             let lastNumber = (counterDoc.data()?["lastNumber"] as? Int) ?? 0
             let newNumber = lastNumber + 1
             transaction.updateData(["lastNumber": newNumber], forDocument: counterRef)
@@ -65,16 +63,13 @@ class AddProductVC: UIViewController {
         pickerView.dataSource = self
         txtselectProductName.inputView = pickerView
         txtselectProductSize.inputView = pickerView
-        
         let toolbar = UIToolbar()
         toolbar.sizeToFit()
         let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
         let doneButton = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(donePressed))
         toolbar.setItems([flexSpace, doneButton], animated: false)
-        
         txtselectProductName.inputAccessoryView = toolbar
         txtselectProductSize.inputAccessoryView = toolbar
-        
         txtselectProductName.delegate = self
         txtselectProductSize.delegate = self
     }
@@ -99,8 +94,6 @@ class AddProductVC: UIViewController {
             "quantity": quantity,
             "barcode": barcode
         ]
-        
-        // Save under category
         db.collection("products").document(name).collection("items").document(id).setData(productData) { error in
             if let error = error {
                 GeneralUtility.showAlert(on: self, title: "Error", message: error.localizedDescription)
@@ -119,11 +112,9 @@ class AddProductVC: UIViewController {
             GeneralUtility.showAlert(on: self, title: "Error", message: "Please fill all required fields.")
             return
         }
-
         let productId = UUID().uuidString
         let quantity = 1
         let categoryPrefix = name.prefix(2).uppercased()
-
         if let existingBarcode = txtProductBarcode.text, !existingBarcode.isEmpty {
             db.collection("products").document(name).collection("items")
                 .whereField("barcode", isEqualTo: existingBarcode)
@@ -159,22 +150,18 @@ class AddProductVC: UIViewController {
 extension AddProductVC: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int { return 1 }
-
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return activeTextField == txtselectProductName ? productname.count : productsize.count
     }
-
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return activeTextField == txtselectProductName ? productname[row] : productsize[row]
     }
-
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if activeTextField == txtselectProductName {
             txtselectProductName.text = productname[row]
         } else if activeTextField == txtselectProductSize {
             txtselectProductSize.text = productsize[row]
         }
-
         if let name = txtselectProductName.text, !name.isEmpty,
            let size = txtselectProductSize.text, !size.isEmpty {
             let prefix = name.prefix(2).uppercased()
@@ -185,7 +172,6 @@ extension AddProductVC: UIPickerViewDelegate, UIPickerViewDataSource, UITextFiel
             }
         }
     }
-
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
         pickerView.reloadAllComponents()
