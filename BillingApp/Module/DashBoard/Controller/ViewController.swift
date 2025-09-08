@@ -21,7 +21,6 @@ class ViewController: UIViewController {
         "Add Item",
         "View Invoices",
         "Manage Stock",
-        "View Reports"
     ]
     
     //MARK: - Life Cycle
@@ -89,12 +88,6 @@ extension ViewController : UITableViewDataSource, UITableViewDelegate {
         }
         if Navigation[indexPath.row] == "Manage Stock" {
             guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ManageStockVC") as? ManageStockVC else {
-                return
-            }
-            GeneralUtility.push(to: vc, from: self)
-        }
-        if Navigation[indexPath.row] == "View Reports" {
-            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ContactUsVC") as? ContactUsVC else {
                 return
             }
             GeneralUtility.push(to: vc, from: self)

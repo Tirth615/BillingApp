@@ -25,7 +25,6 @@ class ProductService {
             }
             
             var allProducts: [[String: Any]] = []
-            
             snapshot?.documents.forEach { doc in
                 var product = doc.data()
                 product["id"] = doc.documentID
@@ -45,7 +44,6 @@ class ProductService {
             }
             
             var grouped: [String: [[String: Any]]] = [:]
-            
             snapshot?.documents.forEach { doc in
                 var product = doc.data()
                 product["id"] = doc.documentID
@@ -56,7 +54,6 @@ class ProductService {
                     grouped[key, default: []].append(product)
                 }
             }
-            
             completion(grouped)
         }
     }

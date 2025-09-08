@@ -1,0 +1,14 @@
+# Xcode
+DerivedData/
+*.xcuserstate
+*.xcuserdata/
+*.xcworkspace
+
+# Pods
+Pods/
+
+# macOS
+.DS_Store
+
+# Optional: lockfile (ignore if you don’t want to commit it)
+# Podfile.lock
