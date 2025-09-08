@@ -12,4 +12,4 @@ Pods/
 
 # Optional: lockfile (ignore if you don’t want to commit it)
 # Podfile.lock
-!GoogleService-Info.plist
+GoogleService-Info.plist
